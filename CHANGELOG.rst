@@ -2,6 +2,76 @@
 Changelog for package serial
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Revert "Merge branch 'ament_cmake'"
+  This reverts commit 8e0effcd36b855701d9327aecff949d7f2b20e31.
+* Revert "Remove test that breaks the build"
+  This reverts commit 7fe3be8d5f24db9837fff7e5b2fc45dcb464eef0.
+* Remove test that breaks the build
+* Convert package to ament_cmake
+* Fix the build and cleanup CMakeLists
+* Add setupapi to ament_export_libraries
+  This prevents dependent libraries from failing with something like: serial.lib(list_ports_win.obj) : error LNK2019: unresolved external symbol __imp_SetupDiEnumDeviceInfo referenced in
+* Migrated to ROS2
+  Followed migration instructions in https://index.ros.org/doc/ros2/Contributing/Migration-Guide/
+* Fix memory leak when exception is thrown by impl classes in (`#198 <https://github.com/clearpathrobotics/serial-ros2/issues/198>`_)
+  Serial::read() vector and string variants.
+* whitespace
+* whitespace
+* reduce the number of jobs on travis (`#172 <https://github.com/clearpathrobotics/serial-ros2/issues/172>`_)
+  * reduce the number of jobs on travis
+  * update usage of pip due to changes in Homebrew
+  * update pip and ensure the right one is being used with an alias
+  * force reinstall pip to get `pip` on PATH
+  * use python2 explicitly to run catkin_make
+  * force use of python2 executable by catkin packages
+  * python!
+  * simpler
+  * how to which
+  * Update .travis.yml
+  * make tests and run_tests
+  * test results
+  * disable timer tests on macOS
+* Fix CMake warning for rt and pthread. (`#165 <https://github.com/clearpathrobotics/serial-ros2/issues/165>`_)
+* remove references to no longer available uninstall command (`#171 <https://github.com/clearpathrobotics/serial-ros2/issues/171>`_)
+* sublime project file updates
+* print GetLastError() result instead of errno (`#154 <https://github.com/clearpathrobotics/serial-ros2/issues/154>`_)
+* implement flushInput and flushOutput for windows (`#153 <https://github.com/clearpathrobotics/serial-ros2/issues/153>`_)
+* Problem: hardware flow control uses RTS_CONTROL_TOGGLE (`#132 <https://github.com/clearpathrobotics/serial-ros2/issues/132>`_)
+  RTS_CONTROL_HANDSHAKE raises RTS when there is space in the input
+  buffer; RTS_CONTROL_TOGGLE only raises RTS when bytes are available for
+  transmission.
+  Also replace numeric constants with symbolic constants.
+* Support 500kbps serial ports. (`#167 <https://github.com/clearpathrobotics/serial-ros2/issues/167>`_)
+* Fix issue with write() and a timeout of 0. (`#137 <https://github.com/clearpathrobotics/serial-ros2/issues/137>`_)
+  * Fix issue with write() and a timeout of 0.
+  * fix up style
+* Update documentation (`#140 <https://github.com/clearpathrobotics/serial-ros2/issues/140>`_)
+  * Fix typo and missing dependency in README
+  * [docs] Update docs: fix deprecation warnings + add missing deps to README
+* fixing unix timeouts handling ("timer_tests.short_interval" failure) (`#147 <https://github.com/clearpathrobotics/serial-ros2/issues/147>`_)
+* fix timeouts handling on Unix systems (`#142 <https://github.com/clearpathrobotics/serial-ros2/issues/142>`_)
+  fixed "singed long" overflow that took place on attempt
+  to use ~3000ms or bigger timeouts on Unix systems
+* resource leak if exception in SerialImpl constructor (`#146 <https://github.com/clearpathrobotics/serial-ros2/issues/146>`_)
+* Const corrections. (`#141 <https://github.com/clearpathrobotics/serial-ros2/issues/141>`_)
+* Updated serial.cc for FreeBSD 9 compatibility.
+* on OS X, use SYSTEM_CLOCK, not CALENDAR_CLOCK
+  Analogously to using `CLOCK_MONOTONIC` on Linux to time events in favor of `CLOCK_REALTIME`, `SYSTEM_CLOCK` should be used in favor of `CALENDAR_CLOCK` on OS X.
+  Ref: http://stackoverflow.com/questions/11680461/monotonic-clock-on-osx
+* on Linux, use CLOCK_MONOTONIC for clock_gettime()
+  On Linux systems which are being driven by an external time source (NTP or PTP), it is possible that time appears to slew in reverse under `CLOCK_REALTIME`. Since the timer function is used to time durations of events (calls to `select()`), it is better to use `CLOCK_MONOTONIC`, which isn't subject to slewing.
+* Comment unreferenced formal parameter
+  Fix warning from static analysis tools.
+* Can use the toolsets from Visual Studio 2010, 2012, 2013, 2015
+* AdditionalIncludeDirectories must be relative for project not solution
+  Fixes `#105 <https://github.com/clearpathrobotics/serial-ros2/issues/105>`_
+* Fix include directory paths in Visual Studio projects.
+  Remove previously ignored *.user file.
+* fix warning on Windows
+* Contributors: Ben Moyer, Brandon Morton, Christopher Baker, Dan Rose, José Manuel Díez, Linquize, Mike Purvis, Patrick O'Leary, Rami, Rimco, Scott K Logan, Stephane Poirier, Vladimir Gamalian, William Woodall, aleksey-sergey, bsbaliga, dontsovcmc, rhd
+
 1.2.1 (2015-04-21)
 ------------------
 * Removed the use of a C++11 feature for compatibility with older browsers.
