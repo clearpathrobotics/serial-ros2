@@ -2,8 +2,8 @@
 Changelog for package serial
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2023-07-25)
+------------------
 * Revert "Merge branch 'ament_cmake'"
   This reverts commit 8e0effcd36b855701d9327aecff949d7f2b20e31.
 * Revert "Remove test that breaks the build"
