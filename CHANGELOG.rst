@@ -2,6 +2,11 @@
 Changelog for package serial
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add cmake flags and use target include
+* Contributors: Luis Camero
+
 2.0.0 (2023-07-25)
 ------------------
 * Revert "Merge branch 'ament_cmake'"
