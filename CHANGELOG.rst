@@ -2,8 +2,8 @@
 Changelog for package serial
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.1 (2025-01-09)
+------------------
 * Add cmake flags and use target include
 * Contributors: Luis Camero
 
